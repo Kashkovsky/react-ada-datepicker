@@ -43,7 +43,7 @@ export default class Time extends React.Component {
     );
   };
 
-  componentDidMount() {
+  componentDidUpdate() {
     // code to ensure selected time will always be in focus within time window when it first appears
     this.list.scrollTop = Time.calcCenterPosition(
       this.props.monthRef
@@ -98,8 +98,10 @@ export default class Time extends React.Component {
     const format = this.props.format ? this.props.format : "p";
     const intervals = this.props.intervals;
     const activeTime = this.props.selected ? this.props.selected : newDate();
+    const activeMinutes = getMinutes(activeTime);
     const currH = getHours(activeTime);
-    const currM = getMinutes(activeTime);
+    const currM =
+      Math.round(activeMinutes / this.props.intervals) * this.props.intervals;
     let base = getStartOfDay(newDate());
     const multiplier = 1440 / intervals;
     const sortedInjectTimes =
