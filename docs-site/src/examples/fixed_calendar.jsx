@@ -1,5 +1,5 @@
 import React from "react";
-import DatePicker from "react-datepicker";
+import DatePicker from "react-ada-datepicker";
 
 export default class FixedCalendar extends React.Component {
   state = {
@@ -30,7 +30,8 @@ export default class FixedCalendar extends React.Component {
           <DatePicker
             fixedHeight
             selected={this.state.startDate}
-            onChange={this.handleChange}/>
+            onChange={this.handleChange}
+          />
         </div>
       </div>
     );

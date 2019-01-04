@@ -1,5 +1,5 @@
 import React from "react";
-import DatePicker from "react-datepicker";
+import DatePicker from "react-ada-datepicker";
 
 export default class ShowTimeOnly extends React.Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from "react";
-import DatePicker from "react-datepicker";
+import DatePicker from "react-ada-datepicker";
 
 export default class Disabled extends React.Component {
   constructor(props) {
@@ -36,7 +36,8 @@ export default class Disabled extends React.Component {
             selected={this.state.startDate}
             onChange={this.handleChange}
             disabled
-            placeholderText="This is disabled"/>
+            placeholderText="This is disabled"
+          />
         </div>
       </div>
     );

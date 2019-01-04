@@ -46,7 +46,7 @@ export default class PopperComponent extends React.Component {
     let popper;
 
     if (!hidePopper) {
-      const classes = classnames("react-datepicker-popper", className);
+      const classes = classnames("react-ada-datepicker-popper", className);
       popper = (
         <Popper
           modifiers={popperModifiers}
@@ -74,7 +74,7 @@ export default class PopperComponent extends React.Component {
       <Manager>
         <Reference>
           {({ ref }) => (
-            <div ref={ref} className="react-datepicker-wrapper">
+            <div ref={ref} className="react-ada-datepicker-wrapper">
               {targetComponent}
             </div>
           )}

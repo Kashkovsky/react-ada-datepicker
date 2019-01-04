@@ -14,7 +14,7 @@ describe("WeekNumber", () => {
       const weekNumber = 1;
       shallowWeekNumber = renderWeekNumber(weekNumber);
       expect(
-        shallowWeekNumber.hasClass("react-datepicker__week-number")
+        shallowWeekNumber.hasClass("react-ada-datepicker__week-number")
       ).to.equal(true);
       expect(shallowWeekNumber.text()).to.equal(weekNumber + "");
     });

@@ -1,5 +1,5 @@
 import React from "react";
-import DatePicker, { registerLocale } from "react-datepicker";
+import DatePicker, { registerLocale } from "react-ada-datepicker";
 import enGB from "date-fns/locale/en-GB";
 
 registerLocale("en-GB", enGB);

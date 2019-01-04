@@ -87,7 +87,7 @@ describe("DatePicker", () => {
     TestUtils.Simulate.focus(ReactDOM.findDOMNode(dateInput));
 
     datePicker.update();
-    const popper = datePicker.find(".react-datepicker-popper");
+    const popper = datePicker.find(".react-ada-datepicker-popper");
     expect(popper.length).to.equal(1);
     expect(popper.hasClass("some-class-name")).to.equal(true);
   });
@@ -136,7 +136,9 @@ describe("DatePicker", () => {
 
     dateInputWrapper.simulate("focus");
     const calendarWrapper = datePicker.find("Calendar");
-    const yearSelect = calendarWrapper.find(".react-datepicker__year-select");
+    const yearSelect = calendarWrapper.find(
+      ".react-ada-datepicker__year-select"
+    );
     dateInputWrapper.simulate("blur");
     yearSelect.simulate("focus");
 
@@ -160,7 +162,9 @@ describe("DatePicker", () => {
 
     dateInputWrapper.simulate("click");
     const calendarWrapper = datePicker.find("Calendar");
-    const yearSelect = calendarWrapper.find(".react-datepicker__year-select");
+    const yearSelect = calendarWrapper.find(
+      ".react-ada-datepicker__year-select"
+    );
     yearSelect.simulate("change");
 
     defer(() => {
@@ -262,7 +266,7 @@ describe("DatePicker", () => {
 
     var day = TestUtils.scryRenderedDOMComponentsWithClass(
       data.datePicker.calendar,
-      "react-datepicker__day--today"
+      "react-ada-datepicker__day--today"
     )[0];
     TestUtils.Simulate.click(ReactDOM.findDOMNode(day));
 
@@ -308,20 +312,20 @@ describe("DatePicker", () => {
     assert(onBlurSpy.calledOnce, "should call onBlur");
   });
 
-  it("should not apply the react-datepicker-ignore-onclickoutside class to the date input when closed", () => {
+  it("should not apply the react-ada-datepicker-ignore-onclickoutside class to the date input when closed", () => {
     var datePicker = TestUtils.renderIntoDocument(<DatePicker />);
     var dateInput = datePicker.input;
     expect(ReactDOM.findDOMNode(dateInput).className).to.not.contain(
-      "react-datepicker-ignore-onclickoutside"
+      "react-ada-datepicker-ignore-onclickoutside"
     );
   });
 
-  it("should apply the react-datepicker-ignore-onclickoutside class to date input when open", () => {
+  it("should apply the react-ada-datepicker-ignore-onclickoutside class to date input when open", () => {
     var datePicker = TestUtils.renderIntoDocument(<DatePicker />);
     var dateInput = datePicker.input;
     TestUtils.Simulate.focus(ReactDOM.findDOMNode(dateInput));
     expect(ReactDOM.findDOMNode(dateInput).className).to.contain(
-      "react-datepicker-ignore-onclickoutside"
+      "react-ada-datepicker-ignore-onclickoutside"
     );
   });
 
@@ -331,7 +335,7 @@ describe("DatePicker", () => {
     );
     var clearButton = TestUtils.findRenderedDOMComponentWithClass(
       datePicker,
-      "react-datepicker__close-icon"
+      "react-ada-datepicker__close-icon"
     );
     expect(clearButton.type).to.equal("button");
   });
@@ -352,7 +356,7 @@ describe("DatePicker", () => {
     );
     var clearButton = TestUtils.findRenderedDOMComponentWithClass(
       datePicker,
-      "react-datepicker__close-icon"
+      "react-ada-datepicker__close-icon"
     );
     TestUtils.Simulate.click(clearButton);
     expect(cleared).to.be.true;
@@ -364,7 +368,7 @@ describe("DatePicker", () => {
     );
     var clearButton = TestUtils.findRenderedDOMComponentWithClass(
       datePicker,
-      "react-datepicker__close-icon"
+      "react-ada-datepicker__close-icon"
     );
     TestUtils.Simulate.click(clearButton);
     expect(datePicker.state.inputValue).to.be.null;
@@ -380,7 +384,7 @@ describe("DatePicker", () => {
     );
     const clearButtonText = TestUtils.findRenderedDOMComponentWithClass(
       datePicker,
-      "react-datepicker__close-icon"
+      "react-ada-datepicker__close-icon"
     ).getAttribute("title");
     expect(clearButtonText).to.equal("clear button");
   });
@@ -400,7 +404,7 @@ describe("DatePicker", () => {
     );
     var dayButton = TestUtils.scryRenderedDOMComponentsWithClass(
       datePicker,
-      "react-datepicker__day"
+      "react-ada-datepicker__day"
     )[0];
     TestUtils.Simulate.click(dayButton);
 
@@ -457,7 +461,7 @@ describe("DatePicker", () => {
     expect(function() {
       TestUtils.findRenderedDOMComponentWithClass(
         datePicker,
-        "react-datepicker__portal"
+        "react-ada-datepicker__portal"
       );
     }).to.not.throw();
     expect(datePicker.calendar).to.exist;
@@ -469,7 +473,7 @@ describe("DatePicker", () => {
     expect(function() {
       TestUtils.findRenderedDOMComponentWithClass(
         datePicker,
-        "react-datepicker__portal"
+        "react-ada-datepicker__portal"
       );
     }).to.throw();
     expect(datePicker.calendar).not.to.exist;

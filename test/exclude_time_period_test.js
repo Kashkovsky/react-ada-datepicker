@@ -25,7 +25,7 @@ describe("DatePicker", () => {
         maxTime={utils.setTime(now, { hours: 18, minutes: 0 })}
       />
     );
-    var times = datePicker.find("li.react-datepicker__time-list-item");
+    var times = datePicker.find("li.react-ada-datepicker__time-list-item");
     expect(times).to.exist;
   });
 });

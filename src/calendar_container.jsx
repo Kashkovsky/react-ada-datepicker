@@ -8,7 +8,7 @@ export default function CalendarContainer({
 }) {
   return (
     <div className={className}>
-      <div className="react-datepicker__triangle" {...arrowProps} />
+      <div className="react-ada-datepicker__triangle" {...arrowProps} />
       {children}
     </div>
   );

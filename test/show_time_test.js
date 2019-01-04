@@ -23,7 +23,7 @@ describe("DatePicker", () => {
   it("should have custom time caption", () => {
     const timeComponent = mount(<TimeComponent timeCaption="Custom time" />);
 
-    const caption = timeComponent.find(".react-datepicker-time__header");
+    const caption = timeComponent.find(".react-ada-datepicker-time__header");
     expect(caption.text()).to.equal("Custom time");
   });
 
@@ -33,22 +33,22 @@ describe("DatePicker", () => {
     );
 
     it("should not show month container when showTimeSelectOnly prop is present", () => {
-      var elem = datePicker.find(".react-datepicker__month-container");
+      var elem = datePicker.find(".react-ada-datepicker__month-container");
       expect(elem).to.have.length(0);
     });
 
     it("should not show previous month button when showTimeSelectOnly prop is present", () => {
-      var elem = datePicker.find(".react-datepicker__navigation--previous");
+      var elem = datePicker.find(".react-ada-datepicker__navigation--previous");
       expect(elem).to.have.length(0);
     });
 
     it("should not show next month button when showTimeSelectOnly prop is present", () => {
-      var elem = datePicker.find(".react-datepicker__navigation--next");
+      var elem = datePicker.find(".react-ada-datepicker__navigation--next");
       expect(elem).to.have.length(0);
     });
 
     it("should not show today button when showTimeSelectOnly prop is present", () => {
-      var elem = datePicker.find(".react-datepicker__today-button");
+      var elem = datePicker.find(".react-ada-datepicker__today-button");
       expect(elem).to.have.length(0);
     });
   });

@@ -1,5 +1,5 @@
 import React from "react";
-import DatePicker from "react-datepicker";
+import DatePicker from "react-ada-datepicker";
 import addDays from "date-fns/addDays";
 import subDays from "date-fns/subDays";
 
@@ -8,7 +8,7 @@ export default class highlightDatesRanges extends React.Component {
     super(props);
     this.highlightWithRanges = [
       {
-        "react-datepicker__day--highlighted-custom-1": [
+        "react-ada-datepicker__day--highlighted-custom-1": [
           subDays(new Date(), 4),
           subDays(new Date(), 3),
           subDays(new Date(), 2),
@@ -16,7 +16,7 @@ export default class highlightDatesRanges extends React.Component {
         ]
       },
       {
-        "react-datepicker__day--highlighted-custom-2": [
+        "react-ada-datepicker__day--highlighted-custom-2": [
           addDays(new Date(), 1),
           addDays(new Date(), 2),
           addDays(new Date(), 3),
@@ -47,7 +47,7 @@ export default class highlightDatesRanges extends React.Component {
             <br />
             {"  this.highlightWithRanges = ["}
             <br />
-            {'    { "react-datepicker__day--highlighted-custom-1": ['}
+            {'    { "react-ada-datepicker__day--highlighted-custom-1": ['}
             <br />
             {"      subDays(new Date(), 4),"}
             <br />
@@ -59,7 +59,7 @@ export default class highlightDatesRanges extends React.Component {
             <br />
             {"    },"}
             <br />
-            {'    { "react-datepicker__day--highlighted-custom-2": ['}
+            {'    { "react-ada-datepicker__day--highlighted-custom-2": ['}
             <br />
             {"      addDays(new Date(), 1),"}
             <br />

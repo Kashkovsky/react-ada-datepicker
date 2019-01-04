@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import DatePicker from "react-datepicker";
+import DatePicker from "react-ada-datepicker";
 
-import "react-datepicker/dist/react-datepicker.css";
+import "react-ada-datepicker/dist/react-ada-datepicker.css";
 
 class App extends Component {
   constructor() {

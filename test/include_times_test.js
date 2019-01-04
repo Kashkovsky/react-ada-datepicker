@@ -28,7 +28,7 @@ describe("TimeComponent", () => {
     );
 
     const disabledItems = timeComponent.find(
-      ".react-datepicker__time-list-item--disabled"
+      ".react-ada-datepicker__time-list-item--disabled"
     );
     expect(disabledItems).to.have.length(45);
   });

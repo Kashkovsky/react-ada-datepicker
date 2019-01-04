@@ -58,15 +58,15 @@ export default class YearDropdownOptions extends React.Component {
       <div
         className={
           selectedYear === year
-            ? "react-datepicker__year-option react-datepicker__year-option--selected_year"
-            : "react-datepicker__year-option"
+            ? "react-ada-datepicker__year-option react-ada-datepicker__year-option--selected_year"
+            : "react-ada-datepicker__year-option"
         }
         key={year}
         ref={year}
         onClick={this.onChange.bind(this, year)}
       >
         {selectedYear === year ? (
-          <span className="react-datepicker__year-option--selected">✓</span>
+          <span className="react-ada-datepicker__year-option--selected">✓</span>
         ) : (
           ""
         )}
@@ -80,12 +80,12 @@ export default class YearDropdownOptions extends React.Component {
     if (!maxYear || !this.state.yearsList.find(year => year === maxYear)) {
       options.unshift(
         <div
-          className="react-datepicker__year-option"
+          className="react-ada-datepicker__year-option"
           ref={"upcoming"}
           key={"upcoming"}
           onClick={this.incrementYears}
         >
-          <a className="react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-upcoming" />
+          <a className="react-ada-datepicker__navigation react-ada-datepicker__navigation--years react-ada-datepicker__navigation--years-upcoming" />
         </div>
       );
     }
@@ -93,12 +93,12 @@ export default class YearDropdownOptions extends React.Component {
     if (!minYear || !this.state.yearsList.find(year => year === minYear)) {
       options.push(
         <div
-          className="react-datepicker__year-option"
+          className="react-ada-datepicker__year-option"
           ref={"previous"}
           key={"previous"}
           onClick={this.decrementYears}
         >
-          <a className="react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-previous" />
+          <a className="react-ada-datepicker__navigation react-ada-datepicker__navigation--years react-ada-datepicker__navigation--years-previous" />
         </div>
       );
     }
@@ -134,8 +134,8 @@ export default class YearDropdownOptions extends React.Component {
 
   render() {
     let dropdownClass = classNames({
-      "react-datepicker__year-dropdown": true,
-      "react-datepicker__year-dropdown--scrollable": this.props
+      "react-ada-datepicker__year-dropdown": true,
+      "react-ada-datepicker__year-dropdown--scrollable": this.props
         .scrollableYearDropdown
     });
 

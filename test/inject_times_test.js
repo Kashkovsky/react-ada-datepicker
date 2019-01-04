@@ -28,7 +28,7 @@ describe("TimeComponent", () => {
     );
 
     const injectedItems = timeComponent.find(
-      ".react-datepicker__time-list-item--injected"
+      ".react-ada-datepicker__time-list-item--injected"
     );
     expect(injectedItems).to.have.length(3);
   });
@@ -47,7 +47,7 @@ describe("TimeComponent", () => {
     );
 
     const injectedItems = timeComponent.find(
-      ".react-datepicker__time-list-item--injected"
+      ".react-ada-datepicker__time-list-item--injected"
     );
     expect(injectedItems).to.have.length(0);
   });
@@ -66,7 +66,7 @@ describe("TimeComponent", () => {
     );
 
     const injectedItems = timeComponent.find(
-      ".react-datepicker__time-list-item--injected"
+      ".react-ada-datepicker__time-list-item--injected"
     );
     expect(injectedItems).to.have.length(3);
   });
@@ -85,7 +85,7 @@ describe("TimeComponent", () => {
     );
 
     const injectedItems = timeComponent.find(
-      ".react-datepicker__time-list-item--injected"
+      ".react-ada-datepicker__time-list-item--injected"
     );
     expect(injectedItems.map(node => node.text())).eql([
       "12:01 AM",

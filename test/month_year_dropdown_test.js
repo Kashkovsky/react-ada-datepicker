@@ -62,7 +62,7 @@ describe("MonthYearDropdown", () => {
 
     it("opens a list when read view is clicked", () => {
       monthYearDropdown
-        .find(".react-datepicker__month-year-read-view")
+        .find(".react-ada-datepicker__month-year-read-view")
         .simulate("click");
       var optionsView = monthYearDropdown.find(MonthYearDropdownOptions);
       expect(optionsView).to.exist;
@@ -70,10 +70,10 @@ describe("MonthYearDropdown", () => {
 
     it("closes the dropdown when a month year is clicked", () => {
       monthYearDropdown
-        .find(".react-datepicker__month-year-read-view")
+        .find(".react-ada-datepicker__month-year-read-view")
         .simulate("click");
       monthYearDropdown
-        .find(".react-datepicker__month-year-option")
+        .find(".react-ada-datepicker__month-year-option")
         .at(1)
         .simulate("click");
       expect(monthYearDropdown.find(MonthYearDropdownOptions)).to.have.length(
@@ -102,11 +102,11 @@ describe("MonthYearDropdown", () => {
 
     it("does not call the supplied onChange function when the same month year is clicked", () => {
       monthYearDropdown
-        .find(".react-datepicker__month-year-read-view")
+        .find(".react-ada-datepicker__month-year-read-view")
         .simulate("click");
 
       monthYearDropdown
-        .find(".react-datepicker__month-year-option")
+        .find(".react-ada-datepicker__month-year-option")
         .at(6)
         .simulate("click");
       expect(handleChangeResult).to.be.null;
@@ -116,11 +116,11 @@ describe("MonthYearDropdown", () => {
       const expected_date = newDate("2017-12");
 
       monthYearDropdown
-        .find(".react-datepicker__month-year-read-view")
+        .find(".react-ada-datepicker__month-year-read-view")
         .simulate("click");
 
       monthYearDropdown
-        .find(".react-datepicker__month-year-option")
+        .find(".react-ada-datepicker__month-year-option")
         .at(5)
         .simulate("click");
       expect(handleChangeResult.toString()).to.eq(expected_date.toString());
@@ -174,7 +174,7 @@ describe("MonthYearDropdown", () => {
 
       monthYearDropdown = getMonthYearDropdown({ dropdownMode: "select" });
       var select = monthYearDropdown.find(
-        ".react-datepicker__month-year-select"
+        ".react-ada-datepicker__month-year-select"
       );
       expect(select).to.have.length(1);
       expect(select.prop("value")).to.eq(expected_date.valueOf());
@@ -232,7 +232,7 @@ describe("MonthYearDropdown", () => {
         date: selectedMonth
       });
       var select = monthYearDropdown.find(
-        ".react-datepicker__month-year-select"
+        ".react-ada-datepicker__month-year-select"
       );
       select.simulate("change", { target: { value: selectedMonth.valueOf() } });
       expect(handleChangeResult).to.not.exist;
@@ -246,7 +246,7 @@ describe("MonthYearDropdown", () => {
         month: selectedMonth
       });
       var select = monthYearDropdown.find(
-        ".react-datepicker__month-year-select"
+        ".react-ada-datepicker__month-year-select"
       );
       select.simulate("change", { target: { value: monthToClick.valueOf() } });
       expect(handleChangeResult.valueOf()).to.equal(monthToClick.valueOf());

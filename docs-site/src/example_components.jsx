@@ -52,7 +52,7 @@ import InjectTimes from "./examples/inject_times";
 import DontCloseOnSelect from "./examples/dont_close_onSelect";
 import RenderCustomHeader from "./examples/render_custom_header";
 
-import "react-datepicker/dist/react-datepicker.css";
+import "react-ada-datepicker/dist/react-ada-datepicker.css";
 import "./style.scss";
 
 export default class exampleComponents extends React.Component {

@@ -1,7 +1,7 @@
 import React from "react";
 import DatePicker, {
   CalendarContainer as OriginalContainer
-} from "react-datepicker";
+} from "react-ada-datepicker";
 import PropTypes from "prop-types";
 
 export default class CalendarContainer extends React.Component {

@@ -29,7 +29,7 @@ export default class MonthDropdown extends React.Component {
   renderSelectMode = monthNames => (
     <select
       value={this.props.month}
-      className="react-datepicker__month-select"
+      className="react-ada-datepicker__month-select"
       onChange={e => this.onChange(e.target.value)}
     >
       {this.renderSelectOptions(monthNames)}
@@ -40,11 +40,11 @@ export default class MonthDropdown extends React.Component {
     <div
       key="read"
       style={{ visibility: visible ? "visible" : "hidden" }}
-      className="react-datepicker__month-read-view"
+      className="react-ada-datepicker__month-read-view"
       onClick={this.toggleDropdown}
     >
-      <span className="react-datepicker__month-read-view--down-arrow" />
-      <span className="react-datepicker__month-read-view--selected-month">
+      <span className="react-ada-datepicker__month-read-view--down-arrow" />
+      <span className="react-ada-datepicker__month-read-view--selected-month">
         {monthNames[this.props.month]}
       </span>
     </div>
@@ -101,7 +101,7 @@ export default class MonthDropdown extends React.Component {
 
     return (
       <div
-        className={`react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--${
+        className={`react-ada-datepicker__month-dropdown-container react-ada-datepicker__month-dropdown-container--${
           this.props.dropdownMode
         }`}
       >

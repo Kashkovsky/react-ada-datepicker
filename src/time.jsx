@@ -68,10 +68,10 @@ export default class Time extends React.Component {
   };
 
   liClasses = (time, currH, currM) => {
-    let classes = ["react-datepicker__time-list-item"];
+    let classes = ["react-ada-datepicker__time-list-item"];
 
     if (currH === getHours(time) && currM === getMinutes(time)) {
-      classes.push("react-datepicker__time-list-item--selected");
+      classes.push("react-ada-datepicker__time-list-item--selected");
     }
     if (
       ((this.props.minTime || this.props.maxTime) &&
@@ -81,13 +81,13 @@ export default class Time extends React.Component {
       (this.props.includeTimes &&
         !isTimeDisabled(time, this.props.includeTimes))
     ) {
-      classes.push("react-datepicker__time-list-item--disabled");
+      classes.push("react-ada-datepicker__time-list-item--disabled");
     }
     if (
       this.props.injectTimes &&
       (getHours(time) * 60 + getMinutes(time)) % this.props.intervals !== 0
     ) {
-      classes.push("react-datepicker__time-list-item--injected");
+      classes.push("react-ada-datepicker__time-list-item--injected");
     }
 
     return classes.join(" ");
@@ -152,26 +152,26 @@ export default class Time extends React.Component {
 
     return (
       <div
-        className={`react-datepicker__time-container ${
+        className={`react-ada-datepicker__time-container ${
           this.props.todayButton
-            ? "react-datepicker__time-container--with-today-button"
+            ? "react-ada-datepicker__time-container--with-today-button"
             : ""
         }`}
       >
         <div
-          className="react-datepicker__header react-datepicker__header--time"
+          className="react-ada-datepicker__header react-ada-datepicker__header--time"
           ref={header => {
             this.header = header;
           }}
         >
-          <div className="react-datepicker-time__header">
+          <div className="react-ada-datepicker-time__header">
             {this.props.timeCaption}
           </div>
         </div>
-        <div className="react-datepicker__time">
-          <div className="react-datepicker__time-box">
+        <div className="react-ada-datepicker__time">
+          <div className="react-ada-datepicker__time-box">
             <ul
-              className="react-datepicker__time-list"
+              className="react-ada-datepicker__time-list"
               ref={list => {
                 this.list = list;
               }}

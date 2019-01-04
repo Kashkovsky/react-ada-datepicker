@@ -2,14 +2,14 @@
   "author": "Denis Kashkovsky",
   "name": "react-ada-datepicker",
   "description":
-    "A fork of react-datepicker with keyboard accessibility improvements",
+    "A fork of react-ada-datepicker with keyboard accessibility improvements",
   "version": "0.0.1",
   "license": "MIT",
   "homepage": "https://github.com/Kashkovsky/react-ada-datepicker",
   "main": "lib",
   "module": "es",
-  "unpkg": "dist/react-datepicker.min.js",
-  "style": "dist/react-datepicker.min.css",
+  "unpkg": "dist/react-ada-datepicker.min.js",
+  "style": "dist/react-ada-datepicker.min.css",
   "files": ["*.md", "dist", "lib", "es", "src/stylesheets"],
   "keywords": ["react", "datepicker", "calendar", "date", "react-component"],
   "repository": {
@@ -112,21 +112,21 @@
     "build-dev":
       "cross-env NODE_ENV=development run-p build:** && run-p css:**",
     "css:prod":
-      "node-sass --output-style compressed src/stylesheets/datepicker.scss > dist/react-datepicker.min.css",
+      "node-sass --output-style compressed src/stylesheets/datepicker.scss > dist/react-ada-datepicker.min.css",
     "css:modules:prod":
-      "node-sass --output-style compressed src/stylesheets/datepicker-cssmodules.scss > dist/react-datepicker-cssmodules.min.css",
+      "node-sass --output-style compressed src/stylesheets/datepicker-cssmodules.scss > dist/react-ada-datepicker-cssmodules.min.css",
     "css:dev":
-      "node-sass --output-style expanded src/stylesheets/datepicker.scss > dist/react-datepicker.css",
+      "node-sass --output-style expanded src/stylesheets/datepicker.scss > dist/react-ada-datepicker.css",
     "css:modules:dev":
-      "node-sass --output-style expanded src/stylesheets/datepicker-cssmodules.scss > dist/react-datepicker-cssmodules.css",
+      "node-sass --output-style expanded src/stylesheets/datepicker-cssmodules.scss > dist/react-ada-datepicker-cssmodules.css",
     "build:es":
       "cross-env BABEL_ENV=es rollup -c -i src/index.jsx -o es/index.js",
     "build:cjs":
       "cross-env BABEL_ENV=cjs rollup -c -i src/index.jsx -o lib/index.js",
     "build:umd:dev":
-      "cross-env BABEL_ENV=es rollup -c rollup.umd.config.js -i src/index.jsx -o dist/react-datepicker.js",
+      "cross-env BABEL_ENV=es rollup -c rollup.umd.config.js -i src/index.jsx -o dist/react-ada-datepicker.js",
     "build:umd:prod":
-      "cross-env BABEL_ENV=es rollup -c rollup.umd.config.js -i src/index.jsx -o dist/react-datepicker.min.js",
+      "cross-env BABEL_ENV=es rollup -c rollup.umd.config.js -i src/index.jsx -o dist/react-ada-datepicker.min.js",
     "build:docs":
       "cross-env MODULES=false webpack --config webpack.docs.config.js"
   },

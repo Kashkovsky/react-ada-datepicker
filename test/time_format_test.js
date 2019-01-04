@@ -23,7 +23,7 @@ describe("TimeComponent", () => {
       var timeComponent = mount(<TimeComponent format="HH:mm" />);
 
       var timeListItem = timeComponent.find(
-        ".react-datepicker__time-list-item"
+        ".react-ada-datepicker__time-list-item"
       );
       expect(timeListItem.at(0).text()).to.eq("00:00");
     });
@@ -58,7 +58,7 @@ describe("TimeComponent", () => {
       );
       expect(
         spy.args[0][1].classList.contains(
-          "react-datepicker__time-list-item--selected"
+          "react-ada-datepicker__time-list-item--selected"
         )
       ).to.be.true;
     });

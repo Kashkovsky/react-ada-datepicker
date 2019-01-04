@@ -15,10 +15,10 @@ module.exports = {
     // Needed to direct the docs to the local version of the datepicker, this is not needed for
     // normal setup.
     alias: {
-      "react-datepicker/dist/react-datepicker.css": path.resolve(
+      "react-ada-datepicker/dist/react-ada-datepicker.css": path.resolve(
         "./src/stylesheets/datepicker.scss"
       ),
-      "react-datepicker": path.resolve("./src/index.jsx")
+      "react-ada-datepicker": path.resolve("./src/index.jsx")
     }
   },
   module: {

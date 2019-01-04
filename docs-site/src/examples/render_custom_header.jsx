@@ -1,5 +1,5 @@
 import React from "react";
-import DatePicker from "react-datepicker";
+import DatePicker from "react-ada-datepicker";
 import range from "lodash/range";
 import getYear from "date-fns/getYear";
 import getMonth from "date-fns/getMonth";

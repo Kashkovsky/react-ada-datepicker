@@ -14,15 +14,17 @@ export default class MonthDropdownOptions extends React.Component {
       <div
         className={
           this.props.month === i
-            ? "react-datepicker__month-option --selected_month"
-            : "react-datepicker__month-option"
+            ? "react-ada-datepicker__month-option --selected_month"
+            : "react-ada-datepicker__month-option"
         }
         key={month}
         ref={month}
         onClick={this.onChange.bind(this, i)}
       >
         {this.props.month === i ? (
-          <span className="react-datepicker__month-option--selected">✓</span>
+          <span className="react-ada-datepicker__month-option--selected">
+            ✓
+          </span>
         ) : (
           ""
         )}
@@ -37,7 +39,7 @@ export default class MonthDropdownOptions extends React.Component {
 
   render() {
     return (
-      <div className="react-datepicker__month-dropdown">
+      <div className="react-ada-datepicker__month-dropdown">
         {this.renderOptions()}
       </div>
     );

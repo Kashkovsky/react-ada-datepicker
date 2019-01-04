@@ -43,33 +43,41 @@ describe("YearDropdown", () => {
     });
 
     it("opens a list when read view is clicked", () => {
-      yearDropdown.find(".react-datepicker__year-read-view").simulate("click");
+      yearDropdown
+        .find(".react-ada-datepicker__year-read-view")
+        .simulate("click");
       var optionsView = yearDropdown.find(YearDropdownOptions);
       expect(optionsView).to.exist;
     });
 
     it("closes the dropdown when a year is clicked", () => {
-      yearDropdown.find(".react-datepicker__year-read-view").simulate("click");
       yearDropdown
-        .find(".react-datepicker__year-option")
+        .find(".react-ada-datepicker__year-read-view")
+        .simulate("click");
+      yearDropdown
+        .find(".react-ada-datepicker__year-option")
         .at(1)
         .simulate("click");
       expect(yearDropdown.find(YearDropdownOptions)).to.have.length(0);
     });
 
     it("does not call the supplied onChange function when the same year is clicked", () => {
-      yearDropdown.find(".react-datepicker__year-read-view").simulate("click");
       yearDropdown
-        .find(".react-datepicker__year-option")
+        .find(".react-ada-datepicker__year-read-view")
+        .simulate("click");
+      yearDropdown
+        .find(".react-ada-datepicker__year-option")
         .at(6)
         .simulate("click");
       expect(lastOnChangeValue).to.be.null;
     });
 
     it("calls the supplied onChange function when a different year is clicked", () => {
-      yearDropdown.find(".react-datepicker__year-read-view").simulate("click");
       yearDropdown
-        .find(".react-datepicker__year-option")
+        .find(".react-ada-datepicker__year-read-view")
+        .simulate("click");
+      yearDropdown
+        .find(".react-ada-datepicker__year-option")
         .at(7)
         .simulate("click");
       expect(lastOnChangeValue).to.eq(2014);
@@ -79,7 +87,7 @@ describe("YearDropdown", () => {
   describe("select mode", () => {
     it("renders a select with default year range options", () => {
       yearDropdown = getYearDropdown({ dropdownMode: "select" });
-      const select = yearDropdown.find(".react-datepicker__year-select");
+      const select = yearDropdown.find(".react-ada-datepicker__year-select");
       expect(select).to.have.length(1);
       expect(select.prop("value")).to.eq(2015);
 
@@ -95,7 +103,7 @@ describe("YearDropdown", () => {
         minDate: newDate("1988-01-01"),
         maxDate: newDate("2016-01-01")
       });
-      const select = yearDropdown.find(".react-datepicker__year-select");
+      const select = yearDropdown.find(".react-ada-datepicker__year-select");
       expect(select).to.have.length(1);
       expect(select.prop("value")).to.eq(2015);
 
@@ -107,14 +115,14 @@ describe("YearDropdown", () => {
 
     it("does not call the supplied onChange function when the same year is clicked", () => {
       yearDropdown = getYearDropdown({ dropdownMode: "select" });
-      const select = yearDropdown.find(".react-datepicker__year-select");
+      const select = yearDropdown.find(".react-ada-datepicker__year-select");
       select.simulate("click", { target: { value: 2015 } });
       expect(lastOnChangeValue).to.be.null;
     });
 
     it("calls the supplied onChange function when a different year is clicked", () => {
       yearDropdown = getYearDropdown({ dropdownMode: "select" });
-      const select = yearDropdown.find(".react-datepicker__year-select");
+      const select = yearDropdown.find(".react-ada-datepicker__year-select");
       select.simulate("change", { target: { value: 2014 } });
       expect(lastOnChangeValue).to.eq(2014);
     });

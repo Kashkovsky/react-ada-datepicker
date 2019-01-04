@@ -47,7 +47,7 @@ export default class YearDropdown extends React.Component {
   renderSelectMode = () => (
     <select
       value={this.props.year}
-      className="react-datepicker__year-select"
+      className="react-ada-datepicker__year-select"
       onChange={this.onSelectChange}
     >
       {this.renderSelectOptions()}
@@ -58,11 +58,11 @@ export default class YearDropdown extends React.Component {
     <div
       key="read"
       style={{ visibility: visible ? "visible" : "hidden" }}
-      className="react-datepicker__year-read-view"
+      className="react-ada-datepicker__year-read-view"
       onClick={event => this.toggleDropdown(event)}
     >
-      <span className="react-datepicker__year-read-view--down-arrow" />
-      <span className="react-datepicker__year-read-view--selected-year">
+      <span className="react-ada-datepicker__year-read-view--down-arrow" />
+      <span className="react-ada-datepicker__year-read-view--selected-year">
         {this.props.year}
       </span>
     </div>
@@ -140,7 +140,7 @@ export default class YearDropdown extends React.Component {
 
     return (
       <div
-        className={`react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--${
+        className={`react-ada-datepicker__year-dropdown-container react-ada-datepicker__year-dropdown-container--${
           this.props.dropdownMode
         }`}
       >

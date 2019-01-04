@@ -29,7 +29,7 @@ describe("YearDropdownOptions", () => {
   it("shows the available years in the initial view", () => {
     const yearDropdownNode = yearDropdown.find("div");
     const textContents = yearDropdownNode
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents).to.have.members([
@@ -56,11 +56,11 @@ describe("YearDropdownOptions", () => {
 
   it("increments the available years when the 'upcoming years' button is clicked", () => {
     yearDropdown
-      .find(".react-datepicker__navigation--years-upcoming")
+      .find(".react-ada-datepicker__navigation--years-upcoming")
       .simulate("click");
 
     const textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents).to.have.members([
@@ -82,11 +82,11 @@ describe("YearDropdownOptions", () => {
 
   it("decrements the available years when the 'previous years' button is clicked", () => {
     yearDropdown
-      .find(".react-datepicker__navigation--years-previous")
+      .find(".react-ada-datepicker__navigation--years-previous")
       .simulate("click");
 
     const textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents).to.have.members([
@@ -108,7 +108,7 @@ describe("YearDropdownOptions", () => {
 
   it("calls the supplied onChange function when a year is clicked", () => {
     yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .filterWhere(e => e.text().includes("2015"))
       .simulate("click");
     expect(handleChangeResult).to.equal(2015);
@@ -145,10 +145,12 @@ describe("YearDropdownOptions with scrollable dropwdown", () => {
     );
     expect(yearDropdown.state().yearsList.length).to.equal(21);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-upcoming").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-upcoming")
+        .length
     ).to.equal(1);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(1);
   });
 
@@ -189,10 +191,12 @@ describe("YearDropdownOptions with scrollable dropwdown", () => {
     );
 
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-upcoming").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-upcoming")
+        .length
     ).to.equal(0);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(0);
   });
 
@@ -213,14 +217,16 @@ describe("YearDropdownOptions with scrollable dropwdown", () => {
     );
 
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(1);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-upcoming").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-upcoming")
+        .length
     ).to.equal(1);
 
     let textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents.find(year => year === utils.getYear(minDate))).to.be
@@ -229,10 +235,10 @@ describe("YearDropdownOptions with scrollable dropwdown", () => {
       .undefined;
 
     yearDropdown
-      .find(".react-datepicker__navigation--years-previous")
+      .find(".react-ada-datepicker__navigation--years-previous")
       .simulate("click");
     textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents.find(year => year === utils.getYear(minDate))).to.be
@@ -240,14 +246,15 @@ describe("YearDropdownOptions with scrollable dropwdown", () => {
     expect(textContents.find(year => year === utils.getYear(maxDate))).to.be
       .undefined;
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(0);
 
     yearDropdown
-      .find(".react-datepicker__navigation--years-upcoming")
+      .find(".react-ada-datepicker__navigation--years-upcoming")
       .simulate("click");
     textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
     expect(textContents.find(year => year === utils.getYear(minDate))).to.be
       .defined;
@@ -270,33 +277,37 @@ describe("YearDropdownOptions with scrollable dropwdown", () => {
     );
 
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(1);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-upcoming").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-upcoming")
+        .length
     ).to.equal(1);
 
     let textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents.find(year => year === utils.getYear(minDate))).to.be
       .undefined;
 
     yearDropdown
-      .find(".react-datepicker__navigation--years-previous")
+      .find(".react-ada-datepicker__navigation--years-previous")
       .simulate("click");
 
     textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
     expect(textContents.find(year => year === utils.getYear(minDate))).to.be
       .defined;
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-upcoming").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-upcoming")
+        .length
     ).to.equal(1);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(0);
   });
 
@@ -315,34 +326,38 @@ describe("YearDropdownOptions with scrollable dropwdown", () => {
     );
 
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(1);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-upcoming").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-upcoming")
+        .length
     ).to.equal(1);
 
     let textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents.find(year => year === utils.getYear(maxDate))).to.be
       .undefined;
 
     yearDropdown
-      .find(".react-datepicker__navigation--years-upcoming")
+      .find(".react-ada-datepicker__navigation--years-upcoming")
       .simulate("click");
 
     textContents = yearDropdown
-      .find(".react-datepicker__year-option")
+      .find(".react-ada-datepicker__year-option")
       .map(node => node.text());
 
     expect(textContents.find(year => year === utils.getYear(maxDate))).to.be
       .defined;
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-upcoming").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-upcoming")
+        .length
     ).to.equal(0);
     expect(
-      yearDropdown.find(".react-datepicker__navigation--years-previous").length
+      yearDropdown.find(".react-ada-datepicker__navigation--years-previous")
+        .length
     ).to.equal(1);
   });
 

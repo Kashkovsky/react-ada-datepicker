@@ -44,7 +44,7 @@ export { default as CalendarContainer } from "./calendar_container";
 
 export { registerLocale, setDefaultLocale, getDefaultLocale };
 
-const outsideClickIgnoreClass = "react-datepicker-ignore-onclickoutside";
+const outsideClickIgnoreClass = "react-ada-datepicker-ignore-onclickoutside";
 const WrappedCalendar = onClickOutside(Calendar);
 
 // Compares dates year+month combinations
@@ -388,7 +388,7 @@ export default class DatePicker extends React.Component {
 
   handleSelect = (date, event) => {
     // Preventing onFocus event to fix issue
-    // https://github.com/Hacker0x01/react-datepicker/issues/628
+    // https://github.com/Hacker0x01/react-ada-datepicker/issues/628
     this.setState({ preventFocus: true }, () => {
       this.preventFocusTimeout = setTimeout(
         () => this.setState({ preventFocus: false }),
@@ -727,7 +727,8 @@ export default class DatePicker extends React.Component {
       title: this.props.title,
       readOnly: this.props.readOnly,
       required: this.props.required,
-      tabIndex: this.props.tabIndex
+      tabIndex: this.props.tabIndex,
+      showTimeSelectOnly: this.props.showTimeSelectOnly
     });
   };
 
@@ -736,7 +737,7 @@ export default class DatePicker extends React.Component {
       return (
         <button
           type="button"
-          className="react-datepicker__close-icon"
+          className="react-ada-datepicker__close-icon"
           onClick={this.onClearClick}
           title={this.props.clearButtonTitle}
           tabIndex={-1}
@@ -758,13 +759,13 @@ export default class DatePicker extends React.Component {
       return (
         <div>
           {!this.props.inline ? (
-            <div className="react-datepicker__input-container">
+            <div className="react-ada-datepicker__input-container">
               {this.renderDateInput()}
               {this.renderClearButton()}
             </div>
           ) : null}
           {this.state.open || this.props.inline ? (
-            <div className="react-datepicker__portal">{calendar}</div>
+            <div className="react-ada-datepicker__portal">{calendar}</div>
           ) : null}
         </div>
       );
@@ -776,7 +777,7 @@ export default class DatePicker extends React.Component {
         hidePopper={!this.isCalendarOpen()}
         popperModifiers={this.props.popperModifiers}
         targetComponent={
-          <div className="react-datepicker__input-container">
+          <div className="react-ada-datepicker__input-container">
             {this.renderDateInput()}
             {this.renderClearButton()}
           </div>

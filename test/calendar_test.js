@@ -153,7 +153,7 @@ describe("Calendar", function() {
       forceShowMonthNavigation: true
     });
     const nextNavigationButton = calendar.find(
-      ".react-datepicker__navigation--next"
+      ".react-ada-datepicker__navigation--next"
     );
     expect(nextNavigationButton).to.have.length(1);
   });
@@ -161,7 +161,7 @@ describe("Calendar", function() {
   it("should correctly format weekday using formatWeekDay prop", function() {
     const calendar = getCalendar({ formatWeekDay: day => day[0] });
     calendar
-      .find(".react-datepicker__day-name")
+      .find(".react-ada-datepicker__day-name")
       .forEach(dayName => expect(dayName.text()).to.have.length(1));
   });
 
@@ -259,10 +259,10 @@ describe("Calendar", function() {
       const calendar = getCalendar({ renderCustomHeader });
 
       const nextMontButton = calendar.find(
-        ".react-datepicker__navigation--next"
+        ".react-ada-datepicker__navigation--next"
       );
       const prevMontButton = calendar.find(
-        ".react-datepicker__navigation--previous"
+        ".react-ada-datepicker__navigation--previous"
       );
 
       expect(nextMontButton).to.have.length(0);
@@ -274,9 +274,9 @@ describe("Calendar", function() {
         renderCustomHeader
       });
 
-      expect(calendar.find(".react-datepicker__header--custom")).to.have.length(
-        1
-      );
+      expect(
+        calendar.find(".react-ada-datepicker__header--custom")
+      ).to.have.length(1);
       expect(calendar.find(".custom-header")).to.have.length(1);
 
       const yearSelect = calendar.find(".year-select");
@@ -412,11 +412,11 @@ describe("Calendar", function() {
       });
 
       const prevDisabledNavigationButton = calendar.find(
-        ".react-datepicker__navigation--previous--disabled"
+        ".react-ada-datepicker__navigation--previous--disabled"
       );
 
       const nextDisabledNavigationButton = calendar.find(
-        ".react-datepicker__navigation--next--disabled"
+        ".react-ada-datepicker__navigation--next--disabled"
       );
       expect(prevDisabledNavigationButton).to.have.length(1);
       expect(nextDisabledNavigationButton).to.have.length(0);
@@ -429,11 +429,11 @@ describe("Calendar", function() {
         showDisabledMonthNavigation: true
       });
       const prevDisabledNavigationButton = calendar.find(
-        ".react-datepicker__navigation--previous--disabled"
+        ".react-ada-datepicker__navigation--previous--disabled"
       );
 
       const nextDisabledNavigationButton = calendar.find(
-        ".react-datepicker__navigation--next--disabled"
+        ".react-ada-datepicker__navigation--next--disabled"
       );
       expect(prevDisabledNavigationButton).to.have.length(0);
       expect(nextDisabledNavigationButton).to.have.length(1);
@@ -446,11 +446,11 @@ describe("Calendar", function() {
         showDisabledMonthNavigation: true
       });
       const prevDisabledNavigationButton = calendar.find(
-        ".react-datepicker__navigation--previous--disabled"
+        ".react-ada-datepicker__navigation--previous--disabled"
       );
 
       const nextDisabledNavigationButton = calendar.find(
-        ".react-datepicker__navigation--next--disabled"
+        ".react-ada-datepicker__navigation--next--disabled"
       );
       expect(prevDisabledNavigationButton).to.have.length(0);
       expect(nextDisabledNavigationButton).to.have.length(0);
@@ -464,11 +464,11 @@ describe("Calendar", function() {
         onMonthChange: onMonthChangeSpy
       });
       const prevNavigationButton = calendar.find(
-        ".react-datepicker__navigation--previous"
+        ".react-ada-datepicker__navigation--previous"
       );
 
       const nextNavigationButton = calendar.find(
-        ".react-datepicker__navigation--next"
+        ".react-ada-datepicker__navigation--next"
       );
 
       prevNavigationButton.simulate("click");
@@ -495,11 +495,11 @@ describe("Calendar", function() {
         onMonthChange: onMonthChangeSpy
       });
       const prevNavigationButton = calendar.find(
-        ".react-datepicker__navigation--previous"
+        ".react-ada-datepicker__navigation--previous"
       );
 
       const nextNavigationButton = calendar.find(
-        ".react-datepicker__navigation--next"
+        ".react-ada-datepicker__navigation--next"
       );
 
       prevNavigationButton.simulate("click");
@@ -559,33 +559,33 @@ describe("Calendar", function() {
 
   it("should not show the today button by default", function() {
     const calendar = getCalendar();
-    const todayButton = calendar.find(".react-datepicker__today-button");
+    const todayButton = calendar.find(".react-ada-datepicker__today-button");
     expect(todayButton).to.have.length(0);
   });
 
   it("should show the today button if toggled on", function() {
     const calendar = getCalendar({ todayButton: "Vandaag" });
-    const todayButton = calendar.find(".react-datepicker__today-button");
+    const todayButton = calendar.find(".react-ada-datepicker__today-button");
     expect(todayButton).to.have.length(1);
     expect(todayButton.text()).to.equal("Vandaag");
   });
 
   it("should set the date when pressing todayButton", () => {
     const calendar = getCalendar({ todayButton: "Vandaag" });
-    const todayButton = calendar.find(".react-datepicker__today-button");
+    const todayButton = calendar.find(".react-ada-datepicker__today-button");
     todayButton.simulate("click");
     expect(utils.isSameDay(calendar.state().date, utils.newDate()));
   });
 
   it("should use a hash for week label if weekLabel is NOT provided", () => {
     const calendar = getCalendar({ showWeekNumbers: true });
-    const weekLabel = calendar.find(".react-datepicker__day-name");
+    const weekLabel = calendar.find(".react-ada-datepicker__day-name");
     expect(weekLabel.at(0).text()).to.equal("#");
   });
 
   it("should set custom week label if weekLabel is provided", () => {
     const calendar = getCalendar({ showWeekNumbers: true, weekLabel: "Foo" });
-    const weekLabel = calendar.find(".react-datepicker__day-name");
+    const weekLabel = calendar.find(".react-ada-datepicker__day-name");
     expect(weekLabel.at(0).text()).to.equal("Foo");
   });
 
@@ -647,11 +647,13 @@ describe("Calendar", function() {
       />
     );
 
-    const daysNamesShort = calendarShort.find(".react-datepicker__day-name");
+    const daysNamesShort = calendarShort.find(
+      ".react-ada-datepicker__day-name"
+    );
     expect(daysNamesShort.at(0).text()).to.equal("Sun");
     expect(daysNamesShort.at(6).text()).to.equal("Sat");
 
-    const daysNamesMin = calendarMin.find(".react-datepicker__day-name");
+    const daysNamesMin = calendarMin.find(".react-ada-datepicker__day-name");
     expect(daysNamesMin.at(0).text()).to.equal("Su");
     expect(daysNamesMin.at(6).text()).to.equal("Sa");
   });
@@ -675,7 +677,7 @@ describe("Calendar", function() {
     )[0];
     const previousButton = TestUtils.findRenderedDOMComponentWithClass(
       calendar,
-      "react-datepicker__navigation--previous"
+      "react-ada-datepicker__navigation--previous"
     );
     TestUtils.Simulate.click(previousButton);
     expect(utils.formatDate(date, "dd.MM.yyyy")).to.equal(expectedDate);
@@ -700,7 +702,7 @@ describe("Calendar", function() {
     )[0];
     const nextButton = TestUtils.findRenderedDOMComponentWithClass(
       calendar,
-      "react-datepicker__navigation--next"
+      "react-ada-datepicker__navigation--next"
     );
     TestUtils.Simulate.click(nextButton);
     expect(utils.formatDate(date, "dd.MM.yyyy")).to.equal(expectedDate);
@@ -725,7 +727,7 @@ describe("Calendar", function() {
     )[0];
     const previousButton = TestUtils.findRenderedDOMComponentWithClass(
       calendar,
-      "react-datepicker__navigation--previous"
+      "react-ada-datepicker__navigation--previous"
     );
     TestUtils.Simulate.click(previousButton);
     expect(utils.formatDate(date, "dd.MM.yyyy")).to.equal(expectedDate);
@@ -753,7 +755,9 @@ describe("Calendar", function() {
     });
 
     it("calls onMonthChange prop when previous month button clicked", () => {
-      const select = calendar.find(".react-datepicker__navigation--previous");
+      const select = calendar.find(
+        ".react-ada-datepicker__navigation--previous"
+      );
       select.simulate("click");
 
       assert(
@@ -763,7 +767,7 @@ describe("Calendar", function() {
     });
 
     it("calls onMonthChange prop when next month button clicked", () => {
-      const select = calendar.find(".react-datepicker__navigation--next");
+      const select = calendar.find(".react-ada-datepicker__navigation--next");
       select.simulate("click");
 
       assert(
@@ -884,7 +888,7 @@ describe("Calendar", function() {
     });
 
     it("calls onDropdownFocus prop when year select is focused", () => {
-      const select = calendar.find(".react-datepicker__year-select");
+      const select = calendar.find(".react-ada-datepicker__year-select");
       select.simulate("focus");
 
       assert(
@@ -894,7 +898,7 @@ describe("Calendar", function() {
     });
 
     it("calls onDropdownFocus prop when month select is focused", () => {
-      const select = calendar.find(".react-datepicker__month-select");
+      const select = calendar.find(".react-ada-datepicker__month-select");
       select.simulate("focus");
 
       assert(
@@ -904,7 +908,7 @@ describe("Calendar", function() {
     });
 
     it("calls onDropdownFocus prop when year-month select is focused", () => {
-      const select = calendar.find(".react-datepicker__month-year-select");
+      const select = calendar.find(".react-ada-datepicker__month-year-select");
       select.simulate("focus");
 
       assert(
@@ -914,7 +918,7 @@ describe("Calendar", function() {
     });
 
     it("does not call onDropdownFocus prop when the dropdown container div is focused", () => {
-      const select = calendar.find(".react-datepicker__header__dropdown");
+      const select = calendar.find(".react-ada-datepicker__header__dropdown");
       select.simulate("focus");
 
       assert(
@@ -926,7 +930,9 @@ describe("Calendar", function() {
 
   describe("localization", function() {
     function testLocale(calendar, selected, locale) {
-      const calendarText = calendar.find(".react-datepicker__current-month");
+      const calendarText = calendar.find(
+        ".react-ada-datepicker__current-month"
+      );
       expect(calendarText.text()).to.equal(
         utils.formatDate(selected, dateFormat, locale)
       );
@@ -935,7 +941,9 @@ describe("Calendar", function() {
         firstDateOfWeek,
         locale
       );
-      const firstHeader = calendar.find(".react-datepicker__day-name").at(0);
+      const firstHeader = calendar
+        .find(".react-ada-datepicker__day-name")
+        .at(0);
       expect(firstHeader.text()).to.equal(firstWeekDayMin);
     }
 
@@ -975,7 +983,7 @@ describe("Calendar", function() {
     it("should render empty custom header", function() {
       const calendar = getCalendar({ renderCustomHeader: () => {} });
 
-      const header = calendar.find(".react-datepicker__header--custom");
+      const header = calendar.find(".react-ada-datepicker__header--custom");
       expect(header).to.have.length(1);
     });
   });
