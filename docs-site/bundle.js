@@ -15568,7 +15568,8 @@
                       href: "https://hackerone.com",
                       className: "hero__crafted-by-link"
                     },
-                    "Crafted by ",
+                    "Crafted by",
+                    " ",
                     _react2.default.createElement("img", {
                       src: "images/logo.png",
                       className: "hero__image",
@@ -41417,6 +41418,8 @@
               (_React$cloneElement.readOnly = _this.props.readOnly),
               (_React$cloneElement.required = _this.props.required),
               (_React$cloneElement.tabIndex = _this.props.tabIndex),
+              (_React$cloneElement.showTimeSelectOnly =
+                _this.props.showTimeSelectOnly),
               _React$cloneElement)
             );
           };

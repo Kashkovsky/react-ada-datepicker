@@ -255,6 +255,9 @@ export default class DatePicker extends React.Component {
     return {
       open: this.props.startOpen || false,
       preventFocus: false,
+      initialValue: this.props.selected
+        ? this.props.selected
+        : boundedPreSelection,
       preSelection: this.props.selected
         ? this.props.selected
         : boundedPreSelection,
@@ -532,6 +535,7 @@ export default class DatePicker extends React.Component {
       event.preventDefault();
 
       this.setOpen(false);
+      this.setSelected(this.state.initialValue);
       if (!this.inputOk()) {
         this.props.onInputError({ code: 1, msg: INPUT_ERR_1 });
       }
