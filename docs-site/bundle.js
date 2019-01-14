@@ -40886,6 +40886,9 @@
             return {
               open: _this.props.startOpen || false,
               preventFocus: false,
+              initialValue: _this.props.selected
+                ? _this.props.selected
+                : boundedPreSelection,
               preSelection: _this.props.selected
                 ? _this.props.selected
                 : boundedPreSelection,
@@ -41199,6 +41202,7 @@
               event.preventDefault();
 
               _this.setOpen(false);
+              _this.setSelected(_this.state.initialValue);
               if (!_this.inputOk()) {
                 _this.props.onInputError({ code: 1, msg: INPUT_ERR_1 });
               }
