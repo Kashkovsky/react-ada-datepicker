@@ -3,7 +3,7 @@
   "name": "react-ada-datepicker",
   "description":
     "A fork of react-ada-datepicker with keyboard accessibility improvements",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "homepage": "https://github.com/Kashkovsky/react-ada-datepicker",
   "main": "lib",
