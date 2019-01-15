@@ -41192,6 +41192,7 @@
                   PRESELECT_CHANGE_VIA_NAVIGATE
               ) {
                 _this.handleSelect(copy, event);
+                _this.setState({ initialValue: copy });
                 !_this.props.shouldCloseOnSelect && _this.setPreSelection(copy);
               } else {
                 _this.setOpen(false);
@@ -41306,7 +41307,9 @@
                 useWeekdaysShort: _this.props.useWeekdaysShort,
                 formatWeekDay: _this.props.formatWeekDay,
                 dropdownMode: _this.props.dropdownMode,
-                selected: _this.props.selected,
+                selected: _this.props.adjustDateOnChange
+                  ? _this.state.initialValue
+                  : _this.props.selected,
                 preSelection: _this.state.preSelection,
                 onSelect: _this.handleSelect,
                 onWeekSelect: _this.props.onWeekSelect,
@@ -67372,7 +67375,8 @@
           return _react2.default.createElement(_reactAdaDatepicker2.default, {
             autoFocus: true,
             selected: this.state.startDate,
-            onChange: this.handleChange
+            onChange: this.handleChange,
+            adjustDateOnChange: true
           });
         };
 
