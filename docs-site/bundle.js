@@ -40886,9 +40886,7 @@
             return {
               open: _this.props.startOpen || false,
               preventFocus: false,
-              initialValue: _this.props.selected
-                ? _this.props.selected
-                : boundedPreSelection,
+              initialValue: _this.props.selected,
               preSelection: _this.props.selected
                 ? _this.props.selected
                 : boundedPreSelection,

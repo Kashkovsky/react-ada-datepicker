@@ -21,6 +21,7 @@ export default class HeroExample extends React.Component {
         autoFocus
         selected={this.state.startDate}
         onChange={this.handleChange}
+        adjustDateOnChange
       />
     );
   }

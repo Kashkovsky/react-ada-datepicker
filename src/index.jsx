@@ -525,6 +525,7 @@ export default class DatePicker extends React.Component {
         this.state.lastPreSelectChange === PRESELECT_CHANGE_VIA_NAVIGATE
       ) {
         this.handleSelect(copy, event);
+        this.setState({ initialValue: copy });
         !this.props.shouldCloseOnSelect && this.setPreSelection(copy);
       } else {
         this.setOpen(false);
@@ -630,7 +631,11 @@ export default class DatePicker extends React.Component {
         useWeekdaysShort={this.props.useWeekdaysShort}
         formatWeekDay={this.props.formatWeekDay}
         dropdownMode={this.props.dropdownMode}
-        selected={this.props.selected}
+        selected={
+          this.props.adjustDateOnChange
+            ? this.state.initialValue
+            : this.props.selected
+        }
         preSelection={this.state.preSelection}
         onSelect={this.handleSelect}
         onWeekSelect={this.props.onWeekSelect}
