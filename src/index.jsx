@@ -255,9 +255,7 @@ export default class DatePicker extends React.Component {
     return {
       open: this.props.startOpen || false,
       preventFocus: false,
-      initialValue: this.props.selected
-        ? this.props.selected
-        : boundedPreSelection,
+      initialValue: this.props.selected,
       preSelection: this.props.selected
         ? this.props.selected
         : boundedPreSelection,
