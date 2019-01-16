@@ -384,6 +384,7 @@ export default class DatePicker extends React.Component {
     );
     if (date || !event.target.value) {
       this.setSelected(date, event, true);
+      this.setState({ initialValue: date });
     }
   };
 
