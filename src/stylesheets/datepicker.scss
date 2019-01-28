@@ -3,6 +3,11 @@
 
 .react-ada-datepicker-wrapper {
   display: inline-block;
+  .input-group {
+    input.form-control {
+      z-index: 0;
+    }
+  }
 }
 
 .react-ada-datepicker {
